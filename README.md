@@ -29,8 +29,16 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Technology Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses [DatoCMS](https://www.datocms.com/) as the Content Management System and [Tailwind CSS](https://tailwindcss.com/) for styling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For internationalization support, we use [`next-i18n-router`](https://github.com/i18nexus/next-i18n-router) along side [`react-intl`](https://www.npmjs.com/package/react-intl).
+
+## CI/CD
+
+CI/CD is handled by any hosting provider of your choice, we use [husky]() precommit hook for code formatting and lint checking.
+
+## Test Suite
+
+Test suite is also not provided to give flexibility back to the code owner of the project to decide on the most suitable solution depending on project size and needs.
