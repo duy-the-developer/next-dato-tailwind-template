@@ -53,4 +53,4 @@ Bellow is a list of //TODO items you will find throughout the project that is re
 - [ ] Add [generateStaticParams](https://nextjs.org/docs/app/api-reference/functions/generate-static-params) to dynamic routes
 - [ ] Add [favicon](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons)
 - [ ] Add static OR generate [`robots.txt`](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots)
-
+- [ ] Fetch i18n messages from DatoCMS
