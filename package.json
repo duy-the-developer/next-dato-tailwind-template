@@ -8,10 +8,10 @@
         "start": "next start",
         "serve": "next build && next start --port 8000",
         "lint": "next lint --no-cache",
-        "cm": "git add . && cz",
+        "cm": "cz",
         "nc": "node ./utils/scripts/component.mjs",
         "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,json,scss,css}\"",
-        "prepare": "is-ci || husky install"
+        "prepare": "is-ci || husky install && chmod ug+x .husky/*"
     },
     "dependencies": {
         "clsx": "^2.0.0",
