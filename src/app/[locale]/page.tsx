@@ -2,6 +2,7 @@ import React from 'react'
 import type { Locale } from '@/i18nConfig'
 import getIntl from '@/messages/getIntl'
 import ExampleClientComponent from '@/components/ExampleClientComponent'
+import { HeroBlock } from '@/blocks/HeroBlock'
 
 type HomeProps = {
     params: {
@@ -14,6 +15,7 @@ export default async function Home({ params }: HomeProps) {
 
     return (
         <main className="">
+            <HeroBlock />
             <h1 className="text-4xl font-bold">
                 {int.formatMessage({ id: 'home_title' })}
             </h1>

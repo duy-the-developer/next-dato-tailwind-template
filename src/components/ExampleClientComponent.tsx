@@ -1,3 +1,5 @@
+/* This is an example of a client component consuming the translations
+ * using the useIntl hook from react-intl. */
 'use client'
 
 import { useIntl } from 'react-intl'

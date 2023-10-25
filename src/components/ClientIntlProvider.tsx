@@ -1,3 +1,5 @@
+/* This is the IntlProvider component that wraps the client
+ * components and provides the translations to them. */
 'use client'
 
 import { IntlProvider, MessageFormatElement } from 'react-intl'
