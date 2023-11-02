@@ -15,26 +15,32 @@ type PageProps = {
     }
 }
 
-export function generateStaticParams({ params }: PageProps) {
-    console.log(params)
-    return []
-}
+// export function generateStaticParams({ params }: PageProps) {
+//     console.log(util.inspect(params, false, null, true /* enable colors */))
+//     console.log(
+//         recursiveGqlQuery(
+//             `parent {
+//             slug
+//             parent
+//         }`,
+//             2,
+//         ),
+//     )
+//     return []
+// }
 
 export default async function Page({ params }: PageProps) {
     const int = await getIntl(params.locale)
-    const { data } = await fetchDatoContent(
-        getPageBySlugQuery({
-            locale: params.locale,
-            slug: formatSlug(params.slug),
-        }),
-    )
+    // const { data } = await fetchDatoContent(
+    //     getPageBySlugQuery({
+    //         locale: params.locale,
+    //         slug: formatSlug(params.slug),
+    //     }),
+    // )
 
-    console.log(util.inspect(data, false, null, true /* enable colors */))
-    console.log(util.inspect(params, false, null, true /* enable colors */))
-    if (!data?.page) {
-        console.log('Catch all: Page not found')
-        return notFound()
-    }
+    // if (!data?.page) {
+    //     return notFound()
+    // }
 
     return (
         <>
@@ -43,9 +49,9 @@ export default async function Page({ params }: PageProps) {
             </h1>
             <p className="text-lg">Current locale: {params.locale}</p>
             <LanguageToggle />
-            {data?.page?.body?.map((block: any) => (
-                <ComponentParser key={block.id} data={block} />
-            ))}
+            {/* {data?.page?.body?.map((block: any) => ( */}
+            {/*     <ComponentParser key={block.id} data={block} /> */}
+            {/* ))} */}
         </>
     )
 }
