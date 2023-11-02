@@ -1,0 +1,1 @@
+export { getPageBySlugQuery } from './getPageBySlugQuery'

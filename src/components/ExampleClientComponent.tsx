@@ -4,7 +4,7 @@
 
 import { useIntl } from 'react-intl'
 
-export default function ExampleClientComponent() {
+export function ExampleClientComponent() {
     const { formatMessage } = useIntl()
 
     return (

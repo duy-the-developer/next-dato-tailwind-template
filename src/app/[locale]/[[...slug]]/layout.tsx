@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     //TODO: add metaData
 }
 
-export default function PageLayout({
+export default function HomePageLayout({
     children,
     params,
 }: {
@@ -22,9 +22,15 @@ export default function PageLayout({
     params: { locale: Locale }
 }) {
     return (
-        <html lang={params.locale}>
+        <html
+            lang={params.locale}
+            className="h-full antialiased"
+            suppressHydrationWarning
+        >
             <Providers params={params}>
-                <body className={''}>{children}</body>
+                <body className="flex h-full bg-zinc-50 dark:bg-black">
+                    <main className="flex-auto">{children}</main>
+                </body>
             </Providers>
         </html>
     )
