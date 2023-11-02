@@ -7,7 +7,8 @@ import i18nConfig from '@/i18nConfig'
 import { Providers } from '@/components/Providers'
 
 export function generateStaticParams() {
-    return i18nConfig.locales.map((locale: Locale) => ({ locale }))
+    const locales = i18nConfig.locales.map((locale: Locale) => ({ locale }))
+    return locales
 }
 
 export const metadata: Metadata = {

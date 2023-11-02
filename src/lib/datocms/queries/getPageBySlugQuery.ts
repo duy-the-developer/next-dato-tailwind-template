@@ -1,25 +1,37 @@
 import { gql } from 'graphql-request'
 import { HERO_BLOCK_FRAGMENT } from '@/blocks/HeroBlock/HeroBlock.fragment'
+import i18nConfig, { Locale } from '@/i18nConfig'
 
-export const getPageBySlugQuery = (slug: string): string => gql`
-  ${HERO_BLOCK_FRAGMENT}
+type Params = {
+    locale: Locale
+    slug: string
+}
 
-  query PageQuery{
-    _site {
-        favicon {
-            alt
-            url
+export const getPageBySlugQuery = ({ locale, slug }: Params): string => {
+    const l = i18nConfig.locales.includes(locale)
+        ? locale
+        : i18nConfig.defaultLocale
+
+    return gql`
+      query PageQuery{
+        _site {
+            favicon {
+                alt
+                url
+            }
         }
-    }
-    page(filter: { slug: { in: "${slug}" } }) {
-        _seoMetaTags {
-            attributes
-            tag
-            content
+        page( locale: ${l} filter: { slug: { in: "${slug}" } }) {
+            _seoMetaTags {
+                attributes
+                tag
+                content
+            }
+            body {
+                ...HeroBlockFragment
+            }
         }
-        body {
-            ...HeroBlockFragment
-        }
-    }
-  }
+      }
+
+      ${HERO_BLOCK_FRAGMENT}
 `
+}

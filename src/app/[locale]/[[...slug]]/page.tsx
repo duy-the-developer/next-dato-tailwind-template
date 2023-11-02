@@ -15,12 +15,22 @@ type PageProps = {
     }
 }
 
+export function generateStaticParams({ params }: PageProps) {
+    console.log(params)
+    return []
+}
+
 export default async function Page({ params }: PageProps) {
     const int = await getIntl(params.locale)
     const { data } = await fetchDatoContent(
-        getPageBySlugQuery(formatSlug(params.slug)),
+        getPageBySlugQuery({
+            locale: params.locale,
+            slug: formatSlug(params.slug),
+        }),
     )
+
     console.log(util.inspect(data, false, null, true /* enable colors */))
+    console.log(util.inspect(params, false, null, true /* enable colors */))
     if (!data?.page) {
         console.log('Catch all: Page not found')
         return notFound()

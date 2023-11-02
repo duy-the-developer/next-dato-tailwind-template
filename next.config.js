@@ -3,8 +3,12 @@ const nextConfig = {
     rewrites() {
         return [
             {
-                source: '/',
-                destination: '/home-page',
+                source: '/en',
+                destination: '/en/home-page',
+            },
+            {
+                source: '/fr',
+                destination: '/fr/page-daccueil',
             },
         ]
     },
