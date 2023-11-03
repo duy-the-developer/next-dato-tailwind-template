@@ -9,8 +9,12 @@ export function ExampleClientComponent() {
 
     return (
         <>
-            <h2>I am a client component</h2>
-            <h3>{formatMessage({ id: 'home_greeting' })}</h3>
+            <h2 className="font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+                I am a client component
+            </h2>
+            <h3 className="font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
+                {formatMessage({ id: 'home_greeting' })}
+            </h3>
         </>
     )
 }

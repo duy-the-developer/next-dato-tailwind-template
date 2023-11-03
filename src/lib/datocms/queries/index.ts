@@ -1,2 +1,2 @@
 export { getPageBySlugQuery } from './getPageBySlugQuery'
-export { generateRecursiveQuery } from './generateRecursiveQuery'
+export { getAllPagesSlugQuery } from './getAllPagesSlugQuery'

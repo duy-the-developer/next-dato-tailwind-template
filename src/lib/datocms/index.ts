@@ -3,11 +3,6 @@ const { DATO_API_TOKEN, NEXT_PUBLIC_DATO_ENV, NEXT_PUBLIC_DATO_DRAFT_ENABLED } =
     process.env
 
 export const fetchDatoContent = async (query: string) => {
-    console.log(
-        DATO_API_TOKEN,
-        NEXT_PUBLIC_DATO_ENV,
-        NEXT_PUBLIC_DATO_DRAFT_ENABLED,
-    )
     const headers = {
         'Content-Type': 'application/json',
         Accept: 'application/json',

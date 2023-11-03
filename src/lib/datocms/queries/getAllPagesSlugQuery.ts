@@ -1,13 +1,13 @@
 import { gql } from 'graphql-request'
 import i18nConfig, { Locale } from '@/i18nConfig'
-import { generateRecursiveQuery } from './generateRecursiveQuery'
+import { generateRecursiveQuery } from '@/utils'
 
 type Params = {
     locale: Locale
-    depth: number
+    depth?: number
 }
 
-export const getAllPageSlugsQuery = ({ locale, depth }: Params): string => {
+export const getAllPagesSlugQuery = ({ locale, depth = 0 }: Params): string => {
     const l = i18nConfig.locales.includes(locale)
         ? locale
         : i18nConfig.defaultLocale
@@ -19,7 +19,7 @@ export const getAllPageSlugsQuery = ({ locale, depth }: Params): string => {
           allPages (locale: ${l}) {${generateRecursiveQuery(
               queryField,
               nestedFields,
-              4,
+              depth,
           )}
         }
     }

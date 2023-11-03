@@ -3,6 +3,7 @@
 import { useRouter, usePathname } from 'next/navigation'
 import { useCurrentLocale } from 'next-i18n-router/client'
 import i18nConfig from '@/i18nConfig'
+import { cn } from '@/utils'
 
 export function LanguageToggle(
     props: React.ComponentPropsWithoutRef<'button'>,
@@ -36,8 +37,17 @@ export function LanguageToggle(
     }
 
     return (
-        <button onClick={handleClick} {...props}>
-            {currentLocale === 'en' ? 'Français' : 'English'}
-        </button>
+        <>
+            <button
+                onClick={handleClick}
+                {...props}
+                className={cn(
+                    'font-bold tracking-tight text-zinc-800 dark:text-zinc-100',
+                    props.className,
+                )}
+            >
+                {currentLocale === 'en' ? 'Français' : 'English'}
+            </button>
+        </>
     )
 }
