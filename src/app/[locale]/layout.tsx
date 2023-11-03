@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import type { Locale } from '@/i18nConfig'
 import i18nConfig from '@/i18nConfig'
 import { Providers } from '@/components/Providers'
+import { TestComponent } from '@/components/TestComponent'
 
 export function generateStaticParams() {
     const locales = i18nConfig.locales.map((locale: Locale) => ({ locale }))
@@ -28,11 +29,13 @@ export default function HomePageLayout({
             className="h-full antialiased"
             suppressHydrationWarning
         >
-            <Providers params={params}>
-                <body className="flex h-full bg-zinc-50 dark:bg-black">
-                    <main className="flex-auto">{children}</main>
-                </body>
-            </Providers>
+            <body className="flex h-full bg-zinc-50 dark:bg-black">
+                <Providers params={params}>
+                    <div className="relative flex w-full flex-col">
+                        {children}
+                    </div>
+                </Providers>
+            </body>
         </html>
     )
 }

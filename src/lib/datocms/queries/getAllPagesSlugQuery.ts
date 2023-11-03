@@ -14,14 +14,17 @@ export const getAllPagesSlugQuery = ({ locale, depth = 0 }: Params): string => {
 
     const queryField = 'parent' // Replace with the fields you need
     const nestedFields = ['slug']
-    return gql`
+
+    const result = gql`
         query AllPagesQuery {
           allPages (locale: ${l}) {${generateRecursiveQuery(
               queryField,
               nestedFields,
-              depth,
+              4,
           )}
         }
     }
 `
+
+    return result
 }

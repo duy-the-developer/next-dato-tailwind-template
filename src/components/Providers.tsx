@@ -1,6 +1,7 @@
 import { Locale } from '@/i18nConfig'
 import ClientIntlProvider from './ClientIntlProvider'
 import getIntl from '@/messages/getIntl'
+import { ThemeProvider } from '@/components/ThemeProvider'
 
 type ProviderProps = {
     children: React.ReactNode
@@ -13,9 +14,14 @@ export async function Providers({ children, params }: ProviderProps) {
 
     return (
         <>
-            <ClientIntlProvider messages={intl.messages} locale={params.locale}>
-                {children}
-            </ClientIntlProvider>
+            <ThemeProvider>
+                <ClientIntlProvider
+                    messages={intl.messages}
+                    locale={params.locale}
+                >
+                    {children}
+                </ClientIntlProvider>
+            </ThemeProvider>
         </>
     )
 }
