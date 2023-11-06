@@ -37,17 +37,15 @@ export function LanguageToggle(
     }
 
     return (
-        <>
-            <button
-                onClick={handleClick}
-                {...props}
-                className={cn(
-                    'font-bold tracking-tight text-zinc-800 dark:text-zinc-100',
-                    props.className,
-                )}
-            >
-                {currentLocale === 'en' ? 'Français' : 'English'}
-            </button>
-        </>
+        <button
+            onClick={handleClick}
+            {...props}
+            className={cn(
+                'font-bold tracking-tight text-zinc-800 dark:text-zinc-100',
+                props.className,
+            )}
+        >
+            {currentLocale === 'en' ? 'Français' : 'English'}
+        </button>
     )
 }
